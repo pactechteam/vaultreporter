@@ -16,7 +16,7 @@ async function submitReport(req, res, counter = 0) {
       const email = await getEmail(req.body.userName, req.body.password);
       //`https://debBot:oo$C$NIweTJ9@bonner.hopto.org/api/v1/repos/zachk/demo/contents/${fileName}`,
 
-      const adddress = `https://${req.body.userName}:${req.body.password}@bonner.hopto.org/api/v1/repos/SITREPS/vault/contents/${fileName}`;
+      const adddress = `https://${req.body.userName}:${req.body.password}@${process.env.vault}${fileName}`;
       const response = await axios.post(
         adddress,
         {

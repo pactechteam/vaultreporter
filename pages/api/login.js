@@ -3,7 +3,7 @@ import withSession from "../../lib/session";
 
 export default withSession(async (req, res) => {
   const { username, password } = await req.body;
-  const address = `https://${req.body.username}:${req.body.password}@bonner.hopto.org/api/v1/user`;
+  const address = `https://${req.body.username}:${req.body.password}@${process.env.gitea}/api/v1/user`;
 
   try {
     // we check that the user exists on GitHub and store some data in session

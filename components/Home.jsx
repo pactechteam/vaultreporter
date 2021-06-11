@@ -23,14 +23,14 @@ export default function Home(props) {
   return (
     <div className={styles.background}>
       <div>
-        <h2>Welcome to PACCENTER!</h2>
+        <h2>Welcome to the Politically Active Christians information portal</h2>
 
         {!isLoggedIn && (
           <div>
             <p>
               {" "}
-              To view our cool extra tools, please log in using your bonner
-              gitea username and password
+              To view our cool extra tools, please log in using your username
+              and password
             </p>
             <a href="/login">Login</a>{" "}
           </div>
@@ -51,23 +51,10 @@ export default function Home(props) {
               <a href="/calendar">Calendar</a>{" "}
             </p>
           </div>
+
           <p>
             {" "}
-            <a href="/calendar">Calendar</a>{" "}
-          </p>
-          <p>
-            {" "}
-            <a href="/running">Check what districts you are in (BETA)</a>{" "}
-          </p>
-          <p>
-            {" "}
-            <a href="/report">Submit a SITREP for PAC</a>{" "}
-          </p>
-          <p>
-            {" "}
-            <a href="/volunteer">
-              Sign up to help with political campaigns
-            </a>{" "}
+            <a href="/report">Submit a report on an event</a>{" "}
           </p>
           <p>
             {" "}
