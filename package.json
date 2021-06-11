@@ -12,6 +12,9 @@
     "start": "NODE_ENV=production node server.js",
     "heroku-prebuild": "yarn install && yarn next build"
   },
+  "engines": {
+    "node": "14.15.4"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
