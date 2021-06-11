@@ -16,7 +16,6 @@ export default withSession(async (req, res) => {
       ...params,
       key: process.env.pythonapi,
     });
-    console.log(response.data);
     res.send(response.data);
   } else {
     res.send("access denied");

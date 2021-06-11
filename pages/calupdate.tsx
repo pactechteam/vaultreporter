@@ -4,20 +4,20 @@ import useUser from "../lib/useUser";
 import axios from "axios";
 
 function CalendarUpdatePage(props) {
+  const [name, setName] = useState("");
+  const [uid, setUid] = useState(props.uid);
+  const [description, setDescription] = useState(props.description);
   const { user } = useUser({ redirectTo: "/login" });
   if (!user || user.isLoggedIn === false) {
     return <div>loading...</div>;
   }
-  const [name, setName] = useState("");
-  const [uid, setUid] = useState(props.uid);
-  const [data, setData] = useState("");
-  const [description, setDescription] = useState("");
 
   async function submitHandler() {
     const response = await axios.post("/api/calupdate", { name, uid });
     if (response) {
+      console.log(response.data);
       alert("event updated");
-      window.location.reload();
+      setDescription(response.data);
     }
   }
 
@@ -46,7 +46,7 @@ function CalendarUpdatePage(props) {
             padding: "20px",
           }}
         >
-          <pre>{props.description}</pre>
+          <pre>{description}</pre>
         </div>
       </div>
       <div>

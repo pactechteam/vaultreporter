@@ -10,14 +10,11 @@ export default withSession(async (req, res) => {
         ? "https://pythonpacapi.herokuapp.com/update"
         : "http://localhost:5000/update";
 
-    console.log(params);
-
     const response = await axios.post(address, {
       ...params,
       key: process.env.pythonapi,
     });
-    console.log(response.data);
-    res.send(params);
+    res.send(response.data);
   } else {
     res.send("access denied");
   }
