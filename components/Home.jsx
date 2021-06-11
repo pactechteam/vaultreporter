@@ -23,7 +23,7 @@ export default function Home(props) {
   return (
     <div className={styles.background}>
       <div>
-        <h2>Welcome to the Politically Active Christians information portal</h2>
+        <h2>Welcome to the Portal</h2>
 
         {!isLoggedIn && (
           <div>
