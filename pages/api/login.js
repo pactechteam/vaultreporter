@@ -4,12 +4,12 @@ import withSession from "../../lib/session";
 export default withSession(async (req, res) => {
   const { username, password } = await req.body;
   const address = `https://${req.body.username}:${req.body.password}@git.bonner.hopto.org/api/v1/user`;
-  console.log("address", address);
   try {
     // we check that the user exists on GitHub and store some data in session
     console.log("inside login try block");
 
     const response = await fetchJson(address);
+    console.log("response", response);
     req.session.set("user", response);
     await req.session.save();
     console.log("below req.session.save()");
